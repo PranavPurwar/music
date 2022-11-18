@@ -41,7 +41,8 @@ class MenuBottomSheetDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.navigationView.background = binding.dragHandle.background
-        this.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        val behaviour = BottomSheetBehaviour.from(view)
+        behaviour.state = BottomSheetBehavior.STATE_EXPANDED
         binding.navigationView.apply {
             inflateMenu(menuResId)
             menuModifier?.invoke(menu)
