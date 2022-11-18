@@ -5,6 +5,7 @@ import android.view.*
 import androidx.annotation.MenuRes
 import androidx.core.os.bundleOf
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.zionhuang.innertube.models.ArtistItem
 import com.zionhuang.innertube.models.PlaylistItem
 import com.zionhuang.innertube.models.YTItem
@@ -40,6 +41,7 @@ class MenuBottomSheetDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.navigationView.background = binding.dragHandle.background
+        this.behavior.state = BottomSheetBehavior.STATE_EXPANDED
         binding.navigationView.apply {
             inflateMenu(menuResId)
             menuModifier?.invoke(menu)
