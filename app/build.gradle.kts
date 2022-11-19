@@ -74,6 +74,9 @@ android {
             exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-debug")
         }
     }
+    lintOptions {
+        isAbortOnError = false
+    }
     testOptions {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
